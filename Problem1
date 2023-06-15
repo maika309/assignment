@@ -1,0 +1,27 @@
+using System;
+namespace Problem1
+{
+    class ClockAngle
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the Hours: ");
+            int hrs = int.Parse(Console.ReadLine());
+            Console.Write("Enter the Minutes: ");
+            int min = int.Parse(Console.ReadLine());
+            
+            double hrInDegrees = (hrs * 30) + (min * 30.0 / 60);
+            double minInDegrees = min * 6;
+
+            double diff = Math.Abs(hrInDegrees - minInDegrees);
+
+            if (diff > 180)
+            {
+                diff = 360 - diff;
+            }
+
+            Console.WriteLine($"Angle between {hrs} hour and {min} minute is {diff} degrees");
+            Console.ReadKey();
+        }
+    }
+}
